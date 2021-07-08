@@ -6,11 +6,11 @@ App = {
     upc: 0,
     metamaskAccountID: "0x0000000000000000000000000000000000000000",
     ownerID: "0x0000000000000000000000000000000000000000",
-    originFarmerID: "0x0000000000000000000000000000000000000000",
-    originFarmName: null,
-    originFarmInformation: null,
-    originFarmLatitude: null,
-    originFarmLongitude: null,
+    originProducerID: "0x0000000000000000000000000000000000000000",
+    originProducerName: null,
+    originFactoryInformation: null,
+    originFactoryLocation: null,
+    originFactoryHousenumber: null,
     productNotes: null,
     productPrice: 0,
     distributorID: "0x0000000000000000000000000000000000000000",
@@ -27,11 +27,11 @@ App = {
         App.sku = $("#sku").val();
         App.upc = $("#upc").val();
         App.ownerID = $("#ownerID").val();
-        App.originFarmerID = $("#originFarmerID").val();
-        App.originFarmName = $("#originFarmName").val();
-        App.originFarmInformation = $("#originFarmInformation").val();
-        App.originFarmLatitude = $("#originFarmLatitude").val();
-        App.originFarmLongitude = $("#originFarmLongitude").val();
+        App.originProducerID = $("#originProducerID").val();
+        App.originProducerName = $("#originProducerName").val();
+        App.originFactoryInformation = $("#originFactoryInformation").val();
+        App.originFactoryLocation = $("#originFactoryLocation").val();
+        App.originFactoryHousenumber = $("#originFactoryHousenumber").val();
         App.productNotes = $("#productNotes").val();
         App.productPrice = $("#productPrice").val();
         App.distributorID = $("#distributorID").val();
@@ -42,11 +42,11 @@ App = {
             App.sku,
             App.upc,
             App.ownerID, 
-            App.originFarmerID, 
-            App.originFarmName, 
-            App.originFarmInformation, 
-            App.originFarmLatitude, 
-            App.originFarmLongitude, 
+            App.originProducerID, 
+            App.originProducerName, 
+            App.originFactoryInformation, 
+            App.originFactoryLocation, 
+            App.originFactoryHousenumber, 
             App.productNotes, 
             App.productPrice, 
             App.distributorID, 
@@ -172,10 +172,10 @@ App = {
             return instance.harvestItem(
                 App.upc, 
                 App.metamaskAccountID, 
-                App.originFarmName, 
-                App.originFarmInformation, 
-                App.originFarmLatitude, 
-                App.originFarmLongitude, 
+                App.originProducerName, 
+                App.originFactoryInformation, 
+                App.originFactoryLocation, 
+                App.originFactoryHousenumber, 
                 App.productNotes
             );
         }).then(function(result) {
@@ -303,11 +303,11 @@ App = {
                 "\nSKU:       ", result[0].c[0],
                 "\nUPC:       ", result[1].c[0],
                 "\nOwnerID:   ", result[2],
-                "\nFarmerID:  ", result[3],
-                "\nFarmerName:", result[4],
-                "\nFarmInfo:  ", result[5],
-                "\nFarmLat:   ", result[6],
-                "\nFarmLong   ", result[7]
+                "\nProducerID:  ", result[3],
+                "\nProducerName:", result[4],
+                "\nFactoryInfo:  ", result[5],
+                "\nFactoryLat:   ", result[6],
+                "\nFactoryLong   ", result[7]
             );
         }).catch(function(err) {
           console.log(err.message);
@@ -372,7 +372,7 @@ App = {
     addParites: function (event) {
         event.preventDefault();
         App.contracts.SupplyChain.deployed().then((instance) => {
-            instance.addFarmer(App.originFarmerID);
+            instance.addProducer(App.originProducerID);
             instance.addDistributor(App.distributorID);
             instance.addRetailer(App.retailerID);
             instance.addConsumer(App.consumerID);

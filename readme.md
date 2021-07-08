@@ -1,2 +1,9 @@
-# Supplychain Project
-The purpose of this project is to create a series of smart contracts that would be used in a supply chain for coffee. There is also a UI aspect of the project that allows members of the supplychain to update the state of the product as it goes along the supply chain.
+1. For a fresh start delete the .next folder and the /build/contracts folder.
+2. Make sure you have installed the required modules via:
+    npm install next next-routes @truffle/hdwallet-provider react react-dom web3 truffle artifactor semantic-ui-react
+3. Migrate the Contract to the network by
+    truffle migrate --network private_poa
+4. During this Migration the Contractaddress of the SupplyChain will be shown, make sure to copy it.
+5. Replace the supplyFactoryAddress in the factory.js with the one address you just copied.
+6. Run node server.js
+7. After getting the notification that has finished compliling and is ready at 3000 you can go to CDE Services and visit the Site by selecting node.

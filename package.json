@@ -15,10 +15,18 @@
   "directories": {
     "test": "test"
   },
-  "description": "",
+  "description": "The purpose of this project is to create a series of smart contracts that would be used in a supply chain for coffee. There is also a UI aspect of the project that allows members of the supplychain to update the state of the product as it goes along the supply chain.",
   "dependencies": {
     "truffle-assertions": "^0.9.0",
     "truffle-hdwallet-provider": "^1.0.10",
     "web3": "^1.0.0-beta.55"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cappww/supplychain-smartcontract-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cappww/supplychain-smartcontract-project/issues"
+  },
+  "homepage": "https://github.com/cappww/supplychain-smartcontract-project#readme"
 }
